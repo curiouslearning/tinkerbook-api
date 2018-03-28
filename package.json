@@ -1,0 +1,28 @@
+{
+  "name": "tinkrbook-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./source/server.js"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.7.21",
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "express": "~4.14.0",
+    "express-winston": "^2.1.2",
+    "ip": "^1.1.5",
+    "lodash": "^4.17.4",
+    "moment": "^2.17.1",
+    "moment-timezone": "^0.5.11",
+    "morgan": "~1.7.0",
+    "multer": "^1.2.1",
+    "mysql": "^2.12.0",
+    "serve-favicon": "~2.3.2",
+    "uuid": "^3.0.1",
+    "winston": "^2.3.0",
+    "winston-daily-rotate-file": "^1.4.2"
+  },
+  "devDependencies": {}
+}

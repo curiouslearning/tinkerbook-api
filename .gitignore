@@ -57,3 +57,11 @@ typings/
 # dotenv environment variables file
 .env
 
+#db config file
+db.config
+db.json
+
+#jetbrains
+.idea
+.idea/
+

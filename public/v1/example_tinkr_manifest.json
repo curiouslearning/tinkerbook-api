@@ -1,0 +1,50 @@
+{
+	"manifest_name": "first_grade_english_us_curriculum",
+	"books":
+	[
+		{
+			"book_id": 1,
+			"title": "My First Grade Tinkr Book",
+			"author": "Dr Seuss",
+			"language": "English (U.S.)",
+			"reading_level": 1, 
+			"tags": [
+				"friendship", 
+				"dogs",
+				"family"
+			],
+			"file_name": "my_first_grade_tinkr_book-1.tbf",
+			"path_to_thumbnail": "/tinkr_thumbnail.png",
+			"version": 1
+		},
+		{
+			"book_id": 14,
+			"title": "Globe Trotting Tortoise",
+			"author": "Sam Smith",
+			"language": "English (U.S.)",
+			"reading_level": 1, 
+			"tags": [
+				"travel", 
+				"tortoise"
+			],
+			"file_name": "globe_trotting_tortoise-14.tbf",
+			"path_to_thumbnail": "/gtt_thumbnail.png",
+			"version": 5
+		},
+		{
+			"book_id": 118,
+			"title": "There’s An Apple In My Pie",
+			"author": "Toby Austin",
+			"language": "English (U.S.)",
+			"reading_level": 1, 
+			"tags": [
+				"thanksgiving", 
+				"pies",
+				"family"
+			],
+			"file_name": "theres_an_apple_in_my_pie-118.tbf",
+			"path_to_thumbnail": "/apple_thumbnail.png",
+			"version": 2
+		}
+	]
+}
