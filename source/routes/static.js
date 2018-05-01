@@ -3,7 +3,10 @@ const express = require('express'),
       fs = require('fs'),
       path = require('path'),
       ip = require('ip'),
-      ManifestRequestRepository = require('../repository/manifestRequest');
+      ManifestRequestRepository = require('../repository/manifestRequest'),
+      request = require('request-promise'),
+      settings = require('../settings'),
+      isNil = require('lodash/isnil');
 
 router.get('/manifest/v1/manifest', (req, res) => {
     // node currently throws error if file isnt found
@@ -17,18 +20,24 @@ router.get('/manifest/v1/manifest', (req, res) => {
     });
 });
 
-router.get('/manifest/v1/cdn/my_first_grade_tinkr_book-1.rtf', (req, res) => {
-    let filePath = path.join(__dirname, '../../public/v1/cdn/my_first_grade_tinkr_book-1.rtf');
-    // using req alternatively we can pass jsonPath or filePath in for local path
-    return new ManifestRequestRepository().ManifestRequest(ip.address(), req.originalUrl).then(()=>{
-        // node currently throws error if file isnt found
-        res.send(fs.readFileSync(filePath, 'utf8'))
+router.get('/manifest/v1/cdn/tinkerbook-maniefst', async (req, res) => {
 
-        /*
-            alternatively we can use res.download to download instead of showing raw rtf code or
-            writing something complex to parse it
-         */
-    });
+    try {
+        await ManifestRequestRepository().ManifestRequest(ip.address(), req.originalUrl);
+    } catch(err) {
+        console.log(err);
+    }
+
+    let options = {
+        uri: settings.tinkrbookManifestEndpoint,
+        json: true
+    };
+
+    const results = await request(options);
+
+    if(isNil(results)) return res.send({error: 'Unable to get manifest from CDN'});
+
+    return res.send(results);
 });
 
 module.exports = router;

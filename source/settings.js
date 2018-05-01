@@ -11,7 +11,8 @@ const settings = {
             user: "terwin",
             password: "hnRKTJpNDP4ZCYL",
             database: "development_tablet_connection_config"
-        }
+        },
+        tinkrbookManifestEndpoint: 'https://s3-us-west-2.amazonaws.com/globallit-cdn/tinkr_manifest.json'
     }
 };
 
