@@ -6,7 +6,7 @@ const express = require('express'),
       ManifestRequestRepository = require('../repository/manifestRequest'),
       request = require('request-promise'),
       settings = require('../settings'),
-      isNil = require('lodash/isnil');
+      isNil = require('lodash/isNil');
 
 router.get('/manifest/v1/manifest', (req, res) => {
     // node currently throws error if file isnt found
