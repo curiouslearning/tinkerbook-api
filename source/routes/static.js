@@ -8,19 +8,19 @@ const express = require('express'),
       settings = require('../settings'),
       isNil = require('lodash/isNil');
 
-router.get('/manifest/v1/manifest', (req, res) => {
-    // node currently throws error if file isnt found
+// router.get('/manifest/v1/manifest', (req, res) => {
+//     // node currently throws error if file isnt found
+//
+//     let jsonPath = path.join(__dirname, '../../public/v1/example_tinkr_manifest.json');
+//     let readManifest = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+//
+//     // using req alternatively we can pass jsonPath or filePath in for local path
+//     return new ManifestRequestRepository().ManifestRequest(ip.address(), req.originalUrl).then(()=>{
+//         res.json(readManifest)
+//     });
+// });
 
-    let jsonPath = path.join(__dirname, '../../public/v1/example_tinkr_manifest.json');
-    let readManifest = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-
-    // using req alternatively we can pass jsonPath or filePath in for local path
-    return new ManifestRequestRepository().ManifestRequest(ip.address(), req.originalUrl).then(()=>{
-        res.json(readManifest)
-    });
-});
-
-router.get('/manifest/v1/cdn/tinkerbook-maniefst', async (req, res) => {
+router.get('/manifest/v1/manifest', async (req, res) => {
 
     try {
         await ManifestRequestRepository().ManifestRequest(ip.address(), req.originalUrl);
